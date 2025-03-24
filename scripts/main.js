@@ -16,8 +16,15 @@ async function fetchTemperature(url, elementId) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Document is ready!');
-    fetchTemperature(cairoUrl, 'cairo-temp');
-    fetchTemperature(hamburgUrl, 'hamburg-temp');
-});
+function refreshTemperatures() {
+    document.getElementById('cairo-temp').textContent = "Loading...";
+    document.getElementById('hamburg-temp').textContent = "Loading...";
+
+    setTimeout(() => {
+        fetchTemperature(cairoUrl, 'cairo-temp');
+        fetchTemperature(hamburgUrl, 'hamburg-temp');
+    }, 2000); // 2-second delay
+}
+
+// Initial fetch
+refreshTemperatures();
