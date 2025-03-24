@@ -27,7 +27,7 @@ function onRefreshButtonClick() {
 
     setTimeout(() => {
         refreshTemperatures();
-    }, 1000); // 2-second delay
+    }, 2000); // 2-second delay
 }
 
 // Initial fetch

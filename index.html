@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Web Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Web Page</h1>
-    </header>
-    <main>
-        <p>This is a basic skeleton for a web page.</p>
-        <p>Current temperature in Cairo, Egypt: <span id="cairo-temp">Loading...</span>°C</p>
-        <p>Current temperature in Hamburg, Germany: <span id="hamburg-temp">Loading...</span>°C</p>
-        <button onclick="onRefreshButtonClick()">Refresh Temperatures</button>
-    </main>
-    <footer>
-        <p>&copy; 2025 My Web Page</p>
-    </footer>
+    <div class="container">
+        <header class="text-center my-4">
+            <h1>Welcome to My Web Page</h1>
+        </header>
+        <main class="text-center">
+            <p>This is a basic skeleton for a web page.</p>
+            <p>Current temperature in Cairo, Egypt: <span id="cairo-temp">Loading...</span>°C</p>
+            <p>Current temperature in Hamburg, Germany: <span id="hamburg-temp">Loading...</span>°C</p>
+            <button class="btn btn-primary mt-3" onclick="onRefreshButtonClick()">Refresh Temperatures</button>
+        </main>
+        <footer class="text-center my-4">
+            <p>&copy; 2025 My Web Page</p>
+        </footer>
+    </div>
     <script src="scripts/main.js"></script>
 </body>
 </html>
