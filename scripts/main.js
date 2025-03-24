@@ -17,13 +17,17 @@ async function fetchTemperature(url, elementId) {
 }
 
 function refreshTemperatures() {
+    fetchTemperature(cairoUrl, 'cairo-temp');
+    fetchTemperature(hamburgUrl, 'hamburg-temp');
+}
+
+function onRefreshButtonClick() {
     document.getElementById('cairo-temp').textContent = "Loading...";
     document.getElementById('hamburg-temp').textContent = "Loading...";
 
     setTimeout(() => {
-        fetchTemperature(cairoUrl, 'cairo-temp');
-        fetchTemperature(hamburgUrl, 'hamburg-temp');
-    }, 2000); // 2-second delay
+        refreshTemperatures();
+    }, 1000); // 2-second delay
 }
 
 // Initial fetch
