@@ -3,6 +3,8 @@ body {
     background: linear-gradient(to right, #6a11cb, #2575fc);
     color: white;
     font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 header {
@@ -37,4 +39,35 @@ p {
 button {
     font-size: 1rem;
     padding: 10px 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
 }
