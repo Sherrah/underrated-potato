@@ -1,8 +1,8 @@
 body {
-    margin: 0;
     background: linear-gradient(to right, #6a11cb, #2575fc);
     color: white;
     font-family: Arial, sans-serif;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -39,6 +39,26 @@ p {
 button {
     font-size: 1rem;
     padding: 10px 20px;
+}
+
+.temperature {
+    margin-bottom: 20px;
+}
+
+/* Loading Spinner */
+.loading-spinner::after {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner 0.75s linear infinite;
+}
+
+@keyframes spinner {
+    to { transform: rotate(360deg); }
 }
 
 /* Media Queries for Responsiveness */

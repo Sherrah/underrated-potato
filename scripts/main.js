@@ -9,24 +9,24 @@ async function fetchTemperature(url, elementId) {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        document.getElementById(elementId).textContent = data.main.temp;
+        document.getElementById(elementId).textContent = `${data.main.temp} °C`;
+        document.getElementById(elementId).classList.remove('loading-spinner');
     } catch (error) {
         console.error('Error fetching temperature:', error);
         document.getElementById(elementId).textContent = 'Error';
+        document.getElementById(elementId).classList.remove('loading-spinner');
     }
 }
 
 function refreshTemperatures() {
-    fetchTemperature(cairoUrl, 'cairo-temp');
-    fetchTemperature(hamburgUrl, 'hamburg-temp');
-}
-
-function onRefreshButtonClick() {
-    document.getElementById('cairo-temp').textContent = "Loading...";
-    document.getElementById('hamburg-temp').textContent = "Loading...";
+    document.getElementById('cairo-temp').textContent = "";
+    document.getElementById('cairo-temp').classList.add('loading-spinner');
+    document.getElementById('hamburg-temp').textContent = "";
+    document.getElementById('hamburg-temp').classList.add('loading-spinner');
 
     setTimeout(() => {
-        refreshTemperatures();
+        fetchTemperature(cairoUrl, 'cairo-temp');
+        fetchTemperature(hamburgUrl, 'hamburg-temp');
     }, 2000); // 2-second delay
 }
 
