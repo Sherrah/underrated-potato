@@ -9,7 +9,8 @@ async function fetchTemperature(url, elementId) {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        document.getElementById(elementId).textContent = `${data.main.temp} °C`;
+        const temperature = Math.round(data.main.temp); // Round to the nearest whole number
+        document.getElementById(elementId).textContent = `${temperature} °C`;
         document.getElementById(elementId).classList.remove('loading-spinner');
     } catch (error) {
         console.error('Error fetching temperature:', error);
