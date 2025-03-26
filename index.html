@@ -13,16 +13,22 @@
             <h1>Welcome to My Web Page</h1>
         </header>
         <main class="text-center">
-            <p>This is a basic skeleton for a web page.</p>
-            <div class="temperature">
-                <p>Current temperature in Cairo, Egypt:</p>
-                <p id="cairo-temp" class="loading-spinner"></p>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="temperature">
+                        <p>Current temperature in Cairo, Egypt:</p>
+                        <p id="cairo-temp" class="loading-spinner"></p>
+                    </div>
+                    <div class="temperature">
+                        <p>Current temperature in Hamburg, Germany:</p>
+                        <p id="hamburg-temp" class="loading-spinner"></p>
+                    </div>
+                    <button class="btn btn-primary mt-3" onclick="refreshTemperatures()">Refresh Temperatures</button>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/soly.jpeg" alt="gello Image" class="img-fluid rounded">
+                </div>
             </div>
-            <div class="temperature">
-                <p>Current temperature in Hamburg, Germany:</p>
-                <p id="hamburg-temp" class="loading-spinner"></p>
-            </div>
-            <button class="btn btn-primary mt-3" onclick="refreshTemperatures()">Refresh Temperatures</button>
         </main>
         <footer class="text-center my-4">
             <p>&copy; 2025 My Web Page</p>
